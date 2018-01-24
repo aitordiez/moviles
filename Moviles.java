@@ -16,9 +16,9 @@ public class Moviles
      */
     public Moviles(String marca, String modelo, int capacidad)
     {
-        marca = "";
-        modelo = "";
-        capacidad = 0;
+        this.marca = marca;
+        this.modelo = modelo;
+        this.capacidad = capacidad;
     }
 
     /**
@@ -62,4 +62,13 @@ public class Moviles
     public int getCapacidad(){
         return capacidad;
     }
-}
+    
+    /**
+     * Imprimir por pantalla las características
+     */
+    public void imprimirCaracteristicas(){
+        System.out.println("La marca es: " + marca);
+        System.out.println("El modelo es: " + modelo);
+        System.out.println("La capacidad es: " + capacidad);
+    }
+}    
