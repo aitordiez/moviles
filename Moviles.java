@@ -14,7 +14,7 @@ public class Moviles
     /**
      * Constructor for objects of class Moviles
      */
-    public Moviles()
+    public Moviles(String marca, String modelo, int capacidad)
     {
         marca = "";
         modelo = "";
