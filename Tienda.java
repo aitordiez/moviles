@@ -8,7 +8,7 @@ import java.util.ArrayList;
 public class Tienda
 {
     // instance variables - replace the example below with your own
-    private ArrayList<Moviles> listaMoviles;
+    private ArrayList<Movil> listaMoviles;
     int imei = 0;
     /**
      * Constructor for objects of class Tienda
@@ -26,8 +26,18 @@ public class Tienda
     public void addMoviles(String marca, String modelo, int capacidad)
     {
         // put your code here
-        Moviles nuevoMoviles = new Moviles(marca, modelo, capacidad, imei);
+        Movil nuevoMoviles = new Movil(marca, modelo, capacidad, imei);
         listaMoviles.add(nuevoMoviles);
         imei++;
     }
+    
+    public void mostrarTareasNumeradas()
+    {
+        int posicionTareaActual = 0;
+        while (posicionTareaActual < listaMoviles.size()) {
+            System.out.println((posicionTareaActual+1) + ". " + listaMoviles.getdevolverCaracteristicas());
+            posicionTareaActual++;
+        }
+    }
+
 }
