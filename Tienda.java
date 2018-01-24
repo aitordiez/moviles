@@ -16,7 +16,7 @@ public class Tienda
     public Tienda()
     {
         // initialise instance variables
-        listaMoviles = new ArrayList<Moviles>();
+        listaMoviles = new ArrayList<Movil>();
         imei=1;
     }
 
@@ -31,13 +31,15 @@ public class Tienda
         imei++;
     }
     
-    public void mostrarTareasNumeradas()
+    public void mostrarMoviles()
     {
         int posicionTareaActual = 0;
         while (posicionTareaActual < listaMoviles.size()) {
-            System.out.println((posicionTareaActual+1) + ". " + listaMoviles.getdevolverCaracteristicas());
+            System.out.println((posicionTareaActual+1) + ". " + listaMoviles.get(posicionTareaActual).devolverCaracteristicas() + imei++);
             posicionTareaActual++;
+            
         }
     }
+    
 
 }
