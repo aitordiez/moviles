@@ -11,14 +11,16 @@ public class Moviles
     private String marca;
     private String modelo;
     private int capacidad;
+    private int imei;
     /**
      * Constructor for objects of class Moviles
      */
-    public Moviles(String marca, String modelo, int capacidad)
+    public Moviles(String marca, String modelo, int capacidad, int imei)
     {
         this.marca = marca;
         this.modelo = modelo;
         this.capacidad = capacidad;
+        imei = imei; 
     }
 
     /**
@@ -70,5 +72,13 @@ public class Moviles
         System.out.println("La marca es: " + marca);
         System.out.println("El modelo es: " + modelo);
         System.out.println("La capacidad es: " + capacidad);
+        System.out.println("El imei es : " + imei);
+    }
+    
+    /**
+     * Devolver las caracteristicas de los moviles
+     */
+    public String devolverCaracteristicas(){
+        return ("La marca es: " + marca + "El modelo es: " + modelo + "La capacidad es: " + capacidad + "El imei es: " + imei);
     }
 }    
