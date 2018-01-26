@@ -1,0 +1,15 @@
+#BlueJ class context
+comment0.target=Tienda
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Tienda\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=
+comment1.target=Tienda()
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Tienda\r\n
+comment2.params=marca\ modelo\ capacidad\ pixel
+comment2.target=void\ addMoviles(java.lang.String,\ java.lang.String,\ int,\ int)
+comment2.text=\r\n\ A\u00F1adir\ una\ lista\ de\ objetos\ de\ moviles\r\n
+comment3.params=
+comment3.target=void\ mostrarMoviles()
+comment4.params=
+comment4.target=void\ ordenarPixel()
+comment4.text=\r\n\ Mostrar\ los\ moviles\ ordenados\ por\ su\ pixel\r\n
+numComments=5

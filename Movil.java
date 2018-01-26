@@ -11,16 +11,19 @@ public class Movil
     private String marca;
     private String modelo;
     private int capacidad;
+    //Numero identificativo
     private int imei;
+    private int pixel;
     /**
      * Constructor for objects of class Moviles
      */
-    public Movil(String marca, String modelo, int capacidad, int imei)
+    public Movil(String marca, String modelo, int capacidad, int imei, int pixel)
     {
         this.marca = marca;
         this.modelo = modelo;
         this.capacidad = capacidad;
-        imei = imei; 
+        this.pixel = pixel;
+        this.imei = imei; 
     }
 
     /**
@@ -42,6 +45,34 @@ public class Movil
      */
     public void setCapacidad(int capacidad){
         this.capacidad=capacidad;
+    }
+    
+    /**
+     * Fijar la resolución de la pantalla
+     */
+    public void setPixel(int pixel){
+        this.pixel=pixel;
+    }
+    
+    /**
+     * Fijar el imei
+     */
+    public void setImei(int imei){
+        this.imei=imei;
+    }
+    
+    /**
+     * Devolver el imei
+     */
+    public int getImei(){
+        return imei;
+    }
+    
+    /**
+     * devolver la resolucion de la pantalla
+     */
+    public int getPixel(){
+        return pixel;
     }
     
     /**
@@ -80,7 +111,7 @@ public class Movil
      */
     public String devolverCaracteristicas(){
         String devuelto= "";
-        devuelto = "La marca es: " + marca + "El modelo es: " + modelo + "La capacidad es: " + capacidad + "El imei es: " + imei;
+        devuelto = "La marca es: " + " " + marca + " " + "El modelo es: " + modelo + " " + "La capacidad es: " + " " + capacidad + " " + "El imei es: " + imei;
         return devuelto;
     }
 }    
