@@ -94,5 +94,16 @@ public class Tienda
             posicionTareaActual++;
         }
     }
+    
+    /**
+     * Modificar al menos una de las características del objeto con el numero identificativo indicado por el usuario.
+     */
+    public void modificarCaracteristicas(int pixel, int imei){
+        if(imei>=0 && imei<listaMoviles.size()) {
+            Movil moviles = listaMoviles.get(imei);
+            moviles.setImei(pixel);
+        }
+        
+    }
 }
 
