@@ -68,5 +68,31 @@ public class Tienda
                 posicionTareaActual++;
         }
     }
+    
+    /**
+     * Mostrar los moviles ordenados por su capacidad
+     */    
+    public void ordenarPorCapacidad(){ 
+        ArrayList<Movil> copiaListaMovil = new ArrayList<Movil>();
+        copiaListaMovil.addAll(listaMoviles);
+        ArrayList<Movil> listaMovilOrdenados = new ArrayList<Movil>();
+        Movil movilMenorCapacidad = null;
+        while(!copiaListaMovil.isEmpty()) {
+            movilMenorCapacidad = copiaListaMovil.get(0);
+            for(int i=1; i< copiaListaMovil.size(); i++){
+                if(copiaListaMovil.get(i).getCapacidad() < movilMenorCapacidad.getCapacidad()) {
+                    movilMenorCapacidad = copiaListaMovil.get(i);
+                }
+            }    
+            listaMovilOrdenados.add(movilMenorCapacidad);
+            copiaListaMovil.remove(movilMenorCapacidad);
+            movilMenorCapacidad = null;
+        }
+        int posicionTareaActual = 0;
+        while(posicionTareaActual < listaMovilOrdenados.size()){
+            System.out.println((posicionTareaActual) + "." + listaMovilOrdenados.get(posicionTareaActual).devolverCaracteristicas() + imei++);
+            posicionTareaActual++;
+        }
+    }
 }
 
