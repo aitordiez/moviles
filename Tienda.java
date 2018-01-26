@@ -105,5 +105,19 @@ public class Tienda
         }
         
     }
+    
+    /**
+     * Eliminar los objetos cuyo atributo cumpla una determinada condicion usando obligatoriamente un iterador
+     */
+    public void eliminarObjetos(String modelo){
+        Iterator<Movil> it = listaMoviles.iterator();
+        while(it.hasNext())
+        {
+          Movil i = it.next();
+          if(i.getModelo().contains(modelo)){
+             it.remove();
+          }
+        }
+    }
 }
 
