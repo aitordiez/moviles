@@ -116,10 +116,38 @@ public class Tienda
             posicionTareaActual++;
         }
     }
-    
+
     /**
      * Ordenar por modelo
      */
+    public void ordenarPorModelo(String marca){
+        ArrayList<Movil> copiaListaMovil = new ArrayList<Movil>();
+        for(Movil movilesMarca : listaMoviles){
+            if(movilesMarca.getMarca().equals(marca)){
+                copiaListaMovil.add(movilesMarca);
+            }
+        }
+
+        ArrayList<Movil>ordenadoPorModelo=new ArrayList<Movil>();
+        Movil movilOrdenadoPorModelo=null;
+        while(!copiaListaMovil.isEmpty()){
+            movilOrdenadoPorModelo=copiaListaMovil.get(0);
+            for(int j=1; j < copiaListaMovil.size(); j++){
+                if(copiaListaMovil.get(j).getModelo().compareTo(movilOrdenadoPorModelo.getModelo()) < 0){
+                    movilOrdenadoPorModelo=copiaListaMovil.get(j);
+                }
+
+            }
+            ordenadoPorModelo.add(movilOrdenadoPorModelo);
+            copiaListaMovil.remove(movilOrdenadoPorModelo);
+            movilOrdenadoPorModelo=null;
+        }
+        int posicion= 0;
+        while(posicion < ordenadoPorModelo.size()){
+            System.out.println((posicion) + "." + ordenadoPorModelo.get(posicion).devolverCaracteristicas() + imei++);
+            posicion++;
+        }
+    }
 
     /**
      * Modificar al menos una de las características del objeto con el numero identificativo indicado por el usuario.
@@ -145,8 +173,8 @@ public class Tienda
             }
         }
     }
-    
-     /**
+
+    /**
      * Implementar un método en la segunda clase que permita mostrar por pantalla los objetos de tu coleccion divididos por la cualidad
      * 
      */
@@ -157,12 +185,8 @@ public class Tienda
         }
         for(String marcaMovil: marcas){
             System.out.println(marcaMovil + ":");
-            for(int i=0; i<listaMoviles.size(); i++){
-                if(listaMoviles.get(i).getMarca().equals(marcaMovil)){
-                    System.out.println(listaMoviles.get(i).devolverCaracteristicas());
-                }
-            }
+            ordenarPorModelo(marcaMovil);
+            System.out.println();
         }
     }
-}
-
+}    
