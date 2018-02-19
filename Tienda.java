@@ -1,5 +1,9 @@
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.Scanner;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.HashSet;
 /**
  * Write a description of class Tienda here.
  *
@@ -14,34 +18,52 @@ public class Tienda
     /**
      * Constructor for objects of class Tienda
      */
-    public Tienda()
+    public Tienda(String txt)
     {
         // initialise instance variables
         listaMoviles = new ArrayList<Movil>();
         imei=0;
+        datos(txt);
+    }
+
+    public void datos(String nombre)
+    {
+        try {
+            File archivo = new File(nombre + ".txt");
+            Scanner sc = new Scanner(archivo);
+            while (sc.hasNextLine()) {
+                String[] arrayString= sc.nextLine().split("#");
+                addMoviles(arrayString[0],arrayString[1],Integer.parseInt(arrayString[2]));
+
+            }
+            sc.close();
+        }
+        catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
     }
 
     /**
      * Añadir una lista de objetos de moviles
      */
-    public void addMoviles(String marca, String modelo, int capacidad, int pixel)
+    public void addMoviles(String marca, String modelo, int pixel)
     {
         // put your code here
-        Movil nuevoMoviles = new Movil(marca, modelo, capacidad, pixel, imei);
-        listaMoviles.add(nuevoMoviles);
+        listaMoviles.add(new Movil(marca, modelo, pixel, imei));
         imei++;
     }
-    
+
     public void mostrarMoviles()
     {
         int posicionTareaActual = 0;
         while (posicionTareaActual < listaMoviles.size()) {
             System.out.println(listaMoviles.get(posicionTareaActual) + ". " + listaMoviles.get(posicionTareaActual).devolverCaracteristicas() + imei++);
             posicionTareaActual++;
-            
+
         }
     }
-    
+
     /**
      * Mostrar los moviles ordenados por su pixel
      */
@@ -64,11 +86,11 @@ public class Tienda
         }
         int posicionTareaActual = 0;
         while(posicionTareaActual < listaMovilOrdenados.size()){
-                System.out.println((posicionTareaActual) + "." + listaMovilOrdenados.get(posicionTareaActual).devolverCaracteristicas() + imei++);
-                posicionTareaActual++;
+            System.out.println((posicionTareaActual) + "." + listaMovilOrdenados.get(posicionTareaActual).devolverCaracteristicas() + imei++);
+            posicionTareaActual++;
         }
     }
-    
+
     /**
      * Mostrar los moviles ordenados por su capacidad
      */    
@@ -101,11 +123,11 @@ public class Tienda
     public void modificarCaracteristicas(int pixel, int imei){
         if(imei>=0 && imei<listaMoviles.size()) {
             Movil moviles = listaMoviles.get(imei);
-            moviles.setImei(pixel);
+            moviles.setPixel(pixel);
         }
-        
+
     }
-    
+
     /**
      * Eliminar los objetos cuyo atributo cumpla una determinada condicion usando obligatoriamente un iterador
      */
@@ -113,10 +135,10 @@ public class Tienda
         Iterator<Movil> it = listaMoviles.iterator();
         while(it.hasNext())
         {
-          Movil i = it.next();
-          if(i.getModelo().contains(modelo)){
-             it.remove();
-          }
+            Movil i = it.next();
+            if(i.getModelo().contains(modelo)){
+                it.remove();
+            }
         }
     }
 }

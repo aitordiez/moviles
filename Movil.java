@@ -11,17 +11,17 @@ public class Movil
     private String marca;
     private String modelo;
     private int capacidad;
+    private int pixel;
     //Numero identificativo
     private int imei;
-    private int pixel;
+    
     /**
      * Constructor for objects of class Moviles
      */
-    public Movil(String marca, String modelo, int capacidad, int imei, int pixel)
+    public Movil(String marca, String modelo,int pixel, int imei)
     {
         this.marca = marca;
         this.modelo = modelo;
-        this.capacidad = capacidad;
         this.pixel = pixel;
         this.imei = imei; 
     }
@@ -111,7 +111,7 @@ public class Movil
      */
     public String devolverCaracteristicas(){
         String devuelto= "";
-        devuelto = "La marca es: " + " " + marca + " " + "El modelo es: " + modelo + " " + "La capacidad es: " + " " + capacidad + " " + "El imei es: " + imei;
+        devuelto = "La marca es: " + " " + marca + " " + "El modelo es: " + modelo + " " + "La capacidad es: " + " " + capacidad + " " + "El pixel es: " + pixel + "El imei es: " + imei;
         return devuelto;
     }
 }    

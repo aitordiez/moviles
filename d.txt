@@ -1,0 +1,3 @@
+Nokia#Lumia#23
+Samsung#Galaxy#12
+Apple#iphone5#32
