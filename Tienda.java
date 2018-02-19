@@ -118,6 +118,10 @@ public class Tienda
     }
     
     /**
+     * Ordenar por modelo
+     */
+
+    /**
      * Modificar al menos una de las características del objeto con el numero identificativo indicado por el usuario.
      */
     public void modificarCaracteristicas(int pixel, int imei){
@@ -138,6 +142,25 @@ public class Tienda
             Movil i = it.next();
             if(i.getModelo().contains(modelo)){
                 it.remove();
+            }
+        }
+    }
+    
+     /**
+     * Implementar un método en la segunda clase que permita mostrar por pantalla los objetos de tu coleccion divididos por la cualidad
+     * 
+     */
+    public void ordenacionYMostrarMovilPorMarca(){
+        HashSet<String> marcas = new HashSet<>();
+        for(Movil moviles : listaMoviles){
+            marcas.add(moviles.getMarca());
+        }
+        for(String marcaMovil: marcas){
+            System.out.println(marcaMovil + ":");
+            for(int i=0; i<listaMoviles.size(); i++){
+                if(listaMoviles.get(i).getMarca().equals(marcaMovil)){
+                    System.out.println(listaMoviles.get(i).devolverCaracteristicas());
+                }
             }
         }
     }

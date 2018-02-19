@@ -1,3 +1,10 @@
-Nokia#Lumia#23
-Samsung#Galaxy#12
-Apple#iphone5#32
+Nokia#Lumia1#23
+Samsung#GalaxyS7#12
+Apple#iphone6#32
+Nokia#Lumia2#34
+Samsung#GalaxyS6#32
+Apple#iphone7#12
+Apple#iphone5#16
+bq#Aquaris#32
+Samsung#GalaxyGrand#23
+Nokia#Lumia3#23
